@@ -11,6 +11,21 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+}
+
+.btn{
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(90deg , rgba(0, 195, 255, 0.397) , rgba(208, 255, 0, 0.274));
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+.btn:hover{
+  background-color:  rgb(112, 216, 248);
+  transform: scale(1.05);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.432);
 }
 
 
@@ -20,7 +35,7 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.5s, box-shadow 0.3s;
   cursor: pointer;
   max-width: 300px;
   min-width: 200px;
@@ -42,11 +57,76 @@
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+
+/* ------------سایدبار -------------- */
+
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background-color: #f0f0f0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease; /* تنظیم انیمیشن */
+  transform: translateX(0); /* موقعیت پیش‌فرض در سمت چپ */
+}
+
+.sidebar-right{
+  transform: translateX(calc(100vw - 200px)); /* انتقال کامل به سمت راست */
+  direction: rtl;
+}
+.sidebar-left{
+  transform: translateX(0); /* موقعیت سمت چپ */
+  direction: ltr;
+}
+
+.rtl-mode {
+  direction: rtl;
+}
+
+.ltr-mode {
+  direction: ltr;
+}
+
+
+.sidebar.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.menu-item:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+
 /* مدیا کوئری برای سایزهای کوچک‌تر */
 @media (max-width: 768px) {
   .card {
       flex: 1 1 100%;
   }
+  .sidebar {
+    display: none;
+  }
+  
 }
 
 
@@ -62,3 +142,6 @@
     background-color: #f9f9f9;
   }
 }
+
+
+
