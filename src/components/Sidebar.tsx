@@ -9,9 +9,9 @@ const Sidebar: React.FC<SidebarProps> = ({ className, isRtl }) => {
     return (
         <div className={`${className} ${isRtl ? 'sidebar-right' : 'sidebar-left'}`}>
             <ul className='menu'>
-                <li className='menu-item'>Dashboard</li>
-                <li className='menu-item'>Tasks</li>
-                <li className='menu-item'>Calendar</li>
+                <li className='btn'>Dashboard</li>
+                <li className='btn'>Tasks</li>
+                <li className='btn'>Calendar</li>
             </ul>
         </div>
     );

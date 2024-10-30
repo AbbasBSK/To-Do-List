@@ -9,7 +9,7 @@ const Dashboard: React.FC = () => {
             {/* اضافه کردن پراپ isRtl */}
             <Sidebar className="sidebar" isRtl={isSidebarRight} />
             
-            <div style={{ flex: 1, padding: '20px', maxWidth: '1000px', margin: '0 auto' }} className={` ${isSidebarRight ? "rtl-mode" : " ltr-mode"}`}>
+            <div style={{ flex: 1, padding: '20px', maxWidth: '1000px', margin: '0 auto' }} className={` ${isSidebarRight ? "fade-move-right rtl-mode" : "fade-move-left ltr-mode"}`}>
                 <button onClick={() => setIsSidebarRight(!isSidebarRight)} className={'btn'} >
                     {isSidebarRight ? "Move Sidebar to Left" : "Move Sidebar to Right"}
                 </button>
@@ -21,7 +21,7 @@ const Dashboard: React.FC = () => {
                     flexWrap: 'wrap',
                     gap: '15px',
                 }}>
-                    <div className={`card ${isSidebarRight ? "rtl-mode" : " ltr-mode"}`}>
+                    <div className={`card ${isSidebarRight ? "rtl-mode" : "ltr-mode "}`}>
                         <h2>Task 1</h2>
                         <p>Complete the React component setup.</p>
                     </div>

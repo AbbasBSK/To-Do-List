@@ -22,6 +22,7 @@
   font-weight: bold;
   transition: all 0.5s ease;
   cursor: pointer;
+  margin: 0.5rem 0 0.5rem 0;
 }
 .btn:hover{
   background-color:  rgb(112, 216, 248);
@@ -68,8 +69,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  transition: transform 0.3s ease; /* تنظیم انیمیشن */
+  transition: transform 1s ease; /* تنظیم انیمیشن */
   transform: translateX(0); /* موقعیت پیش‌فرض در سمت چپ */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.466);
 }
 
 .sidebar-right{
@@ -77,8 +79,8 @@
   direction: rtl;
 }
 .sidebar-left{
-  transform: translateX(0); /* موقعیت سمت چپ */
   direction: ltr;
+  transform: translateX(0); /* موقعیت سمت چپ */
 }
 
 .rtl-mode {
@@ -88,6 +90,14 @@
 .ltr-mode {
   direction: ltr;
 }
+
+.fade-move-left{
+  animation: fade 1s linear;
+}
+.fade-move-right{
+  animation: fade2 1s linear;
+}
+
 
 
 .sidebar.rtl {
@@ -141,6 +151,17 @@
   button {
     background-color: #f9f9f9;
   }
+}
+
+@keyframes fade {
+  0%{opacity: 0;}
+  30%{opacity: 0;}
+  100%{opacity: 1;}
+}
+@keyframes fade2 {
+  0%{opacity: 0;}
+  30%{opacity: 0;}
+  100%{opacity: 1;}
 }
 
 
