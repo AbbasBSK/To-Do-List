@@ -24,7 +24,17 @@
   cursor: pointer;
   margin: 0.5rem 0 0.5rem 0;
 }
-.btn:hover{
+.btn2{
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background:  rgba(0, 0, 0, 0.274);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  margin: 0.5rem 0 0.5rem 0;
+}
+.btn:hover , .btn2:hover{
   background-color:  rgb(112, 216, 248);
   transform: scale(1.05);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.432);
@@ -63,7 +73,7 @@
 /* ------------سایدبار -------------- */
 
 .sidebar {
-  width: 200px;
+  width: 230px;
   height: 100vh;
   background-color: #f0f0f0;
   position: fixed;
@@ -75,7 +85,7 @@
 }
 
 .sidebar-right{
-  transform: translateX(calc(100vw - 200px)); /* انتقال کامل به سمت راست */
+  transform: translateX(calc(100vw - 230px)); /* انتقال کامل به سمت راست */
   direction: rtl;
 }
 .sidebar-left{
