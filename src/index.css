@@ -11,7 +11,14 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+    
+}
+
+body{
+  background:linear-gradient(90deg , rgba(255, 255, 255, 0.867) , rgba(240, 239, 159, 0.516)), url(/src/assets/images/wallpaper.jpg);
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
 }
 
 .btn{
@@ -25,9 +32,9 @@
   margin: 0.5rem 0 0.5rem 0;
 }
 .btn2{
-  padding: 1rem;
+  padding: 0.7rem;
   border-radius: 0.5rem;
-  background:  rgba(0, 0, 0, 0.274);
+  background:  rgba(172, 171, 171, 0.901);
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: bold;
   transition: all 0.5s ease;
@@ -75,7 +82,10 @@
 .sidebar {
   width: 230px;
   height: 100vh;
-  background-color: #f0f0f0;
+  background:linear-gradient(90deg , rgba(255, 255, 255, 0.568) , rgba(255, 255, 255, 0.525)), url(/src/assets/images/42.jpg);
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(20px) brightness(0.8);
   position: fixed;
   top: 0;
   left: 0;
