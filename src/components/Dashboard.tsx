@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
+import Card from './Card';
 
 const Dashboard: React.FC = () => {
     const [isSidebarRight, setIsSidebarRight] = useState(false);
+
+
 
     return (
         <div style={{ display: 'flex' }}>
@@ -28,20 +31,9 @@ const Dashboard: React.FC = () => {
                     flexWrap: 'wrap',
                     gap: '15px',
                 }}>
-                    <div className={`card ${isSidebarRight ? "rtl-mode" : "ltr-mode "}`}>
-                        <h2>Task 1</h2>
-                        <p>Complete the React component setup.</p>
-                    </div>
-
-                    <div className={`card ${isSidebarRight ? "rtl-mode" : " ltr-mode"}`}>
-                        <h2>Task 2</h2>
-                        <p>Style the ToDo list for better visuals.</p>
-                    </div>
-
-                    <div className={`card ${isSidebarRight ? "rtl-mode" : " ltr-mode"}`}>
-                        <h2>Task 3</h2>
-                        <p>Add interactivity in the next steps.</p>
-                    </div>
+                    <Card isSidebarRight={isSidebarRight} />
+                    <Card isSidebarRight={isSidebarRight} />
+                    <Card isSidebarRight={isSidebarRight} />
                 </div>
             </div>
         </div>
