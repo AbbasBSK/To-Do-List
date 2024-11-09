@@ -2,8 +2,21 @@ import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import Card from './Card';
 
+interface CardData {
+    id: number;
+    title: string;
+    description: string;
+}
+
 const Dashboard: React.FC = () => {
     const [isSidebarRight, setIsSidebarRight] = useState(false);
+
+    const cardsDataObject: CardData[] = [
+        { id: 1, title: 'Card 1', description: 'This is the first card' },
+        { id: 2, title: 'Card 2', description: 'This is the second card' },
+        { id: 3, title: 'Card 3', description: 'This is the third card' },
+      ];
+
 
 
 
@@ -18,7 +31,7 @@ const Dashboard: React.FC = () => {
                     <label className='toggleLableBox' htmlFor="checkBox" onClick={() => setIsSidebarRight(!isSidebarRight)}>
                         <div className='toggleButton'>
                             <div className='scroolToggle'>
-                            {isSidebarRight ? "L" : "R"}
+                                {isSidebarRight ? "L" : "R"}
                             </div>
                         </div>
                     </label>
@@ -31,9 +44,14 @@ const Dashboard: React.FC = () => {
                     flexWrap: 'wrap',
                     gap: '15px',
                 }}>
-                    <Card isSidebarRight={isSidebarRight} />
-                    <Card isSidebarRight={isSidebarRight} />
-                    <Card isSidebarRight={isSidebarRight} />
+                    {cardsDataObject.map((card) => (
+                        <Card
+                            key={card.id}
+                            isSidebarRight={isSidebarRight}
+                            title={card.title}
+                            description={card.description}
+                        />
+                    ))}
                 </div>
             </div>
         </div>
