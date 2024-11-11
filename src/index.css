@@ -74,7 +74,7 @@ body{
   margin-left: 1.5rem;
 }
 
-
+/* ---------- استایل های کارد ------------- */
 .card {
   flex: 1 1 calc(30% - 10px);
   padding: 15px;
@@ -103,6 +103,34 @@ body{
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.card h2 , .card p{
+  margin-top: 0;
+}
+
+.notCompleted {
+  opacity: 0.6;
+  text-decoration: line-through;
+  color: red !important;
+}
+.completed {
+  color: greenyellow;
+  text-shadow: 0 0 10px black;
+  background: linear-gradient(90deg , rgb(0, 205, 144) , rgba(21, 255, 0, 0.586)) !important;
+}
+
+.completedBtn{
+  min-width: 40%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+  transition: all 1.5s;
+  transition-delay: 20s;
+}
+.completedBtnDone {
+  transform: scale(0);
+  background: linear-gradient(90deg , rgb(0, 255, 17) , rgba(21, 255, 0, 0.586)) !important;
+}
 
 /* ------------سایدبار -------------- */
 
@@ -173,6 +201,7 @@ body{
   background-color: #e0e0e0;
   transform: translateY(-2px);
 }
+
 
 
 /* مدیا کوئری برای سایزهای کوچک‌تر */
