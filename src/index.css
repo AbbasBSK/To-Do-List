@@ -115,7 +115,7 @@ body{
 .completed {
   color: greenyellow;
   text-shadow: 0 0 10px black;
-  background: linear-gradient(90deg , rgb(0, 205, 144) , rgba(21, 255, 0, 0.586)) !important;
+  background: linear-gradient(90deg , rgb(0, 205, 144) , rgba(21, 255, 0, 0.580)) !important;
 }
 
 .completedBtn{
