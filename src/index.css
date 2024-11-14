@@ -110,7 +110,7 @@ body{
 .notCompleted {
   opacity: 0.6;
   text-decoration: line-through;
-  color: red !important;
+  color: rgb(221, 3, 3) !important;
 }
 .completed {
   color: greenyellow;
