@@ -32,13 +32,13 @@ const Card: React.FC<CardProps> = ({ isSidebarRight, title, description, date })
                 {isCompleted ? "Mark as Incomplete" : "Mark as Completed"}
             </button>
             <button className='completedBtn' onClick={handlePostpone}>موکول به روز دیگر</button>
-            {isPopupOpen && (
+            {/* {isPopupOpen && (
                 <div className="popup">
                     <p>آیا می‌خواهید  این تسک  را به روز دیگری موکول کنید؟</p>
                     <button className='btn2' onClick={handleClosePopup}>بله</button>
                     <button className='btn2' onClick={handleClosePopup}>خیر</button>
                 </div>
-            )}
+            )} */}
         </div>
     )
 }
