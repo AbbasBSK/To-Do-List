@@ -6,15 +6,16 @@ interface CardData {
     id: number;
     title: string;
     description: string;
+    date : string;
 }
 
 const Dashboard: React.FC = () => {
     const [isSidebarRight, setIsSidebarRight] = useState(false);
 
     const cardsDataObject: CardData[] = [
-        { id: 1, title: 'Card 1', description: 'This is the first card ' },
-        { id: 2, title: 'Card 2', description: 'This is the second card' },
-        { id: 3, title: 'Card 3', description: 'This is the third card' },
+        { id: 1, title: 'Card 1', description: 'This is the first card '  , date : 'false'},
+        { id: 2, title: 'Card 2', description: 'This is the second card' , date : 'false' },
+        { id: 3, title: 'Card 3', description: 'This is the third card'  , date : 'false'},
       ];
 
 
@@ -50,6 +51,7 @@ const Dashboard: React.FC = () => {
                             isSidebarRight={isSidebarRight}
                             title={card.title}
                             description={card.description}
+                            date = {card.date}
                         />
                     ))}
                 </div>
