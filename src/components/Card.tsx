@@ -9,7 +9,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ isSidebarRight, title, description }) => {
     const [isCompleted, setIsCompleted] = useState(false);
-    const [isPopupOpen, setIsPopupOpen] = useState(true);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     const handleCompleteTask = () => {
         setIsCompleted(!isCompleted);
@@ -28,17 +28,20 @@ const Card: React.FC<CardProps> = ({ isSidebarRight, title, description }) => {
         <div className={`card ${isCompleted ? "completed" : ""}`}>
             <h2 className={`${isSidebarRight ? "rtl-mode" : "ltr-mode "}`}>{title}</h2>
             <p>{description}</p>
-            <button className={`completedBtn ${isCompleted ? "completedBtnDone" : ""}`} onClick={handleCompleteTask}>
-                {isCompleted ? "Mark as Incomplete" : "Mark as Completed"}
-            </button>
-            <button className='completedBtn' onClick={handlePostpone}>موکول به روز دیگر</button>
-            {isPopupOpen && (
-                <div className="popup">
-                    <p>آیا می‌خواهید  این تسک  را به روز دیگری موکول کنید؟</p>
-                    <button className='btn2' onClick={handleClosePopup}>بله</button>
-                    <button className='btn2' onClick={handleClosePopup}>خیر</button>
-                </div>
-            )}
+            <div className='btnBox'>
+
+                <button className={`completedBtn ${isCompleted ? "completedBtnDone" : ""}`} onClick={handleCompleteTask}>
+                    {isCompleted ? "Mark as Incomplete" : "Mark as Completed"}
+                </button>
+                <button className='completedBtn' onClick={handlePostpone}>To another day</button>
+            </div>
+
+
+            <div className={`popup ${isPopupOpen && "opacityOn"}`}>
+                <p>Do you want to postpone this task to another day?</p>
+                <button className='btn2' onClick={handleClosePopup}>yes</button>
+                <button className='btn2' onClick={handleClosePopup}>no</button>
+            </div>
         </div>
     )
 }

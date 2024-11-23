@@ -11,50 +11,54 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-    
 }
 
-body{
-  background:linear-gradient(90deg , rgba(255, 255, 255, 0.867) , rgba(240, 239, 159, 0.516)), url(/src/assets/images/wallpaper.jpg);
+
+body {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.867), rgba(240, 239, 159, 0.516)), url(/src/assets/images/wallpaper.jpg);
   background-size: cover;
   height: 100vh;
   margin: 0;
 }
 
-.btn{
+.btn {
   padding: 1rem;
   border-radius: 0.5rem;
-  background: linear-gradient(90deg , rgba(0, 195, 255, 0.397) , rgba(208, 255, 0, 0.274));
+  background: linear-gradient(90deg, rgba(0, 195, 255, 0.397), rgba(208, 255, 0, 0.274));
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: bold;
   transition: all 0.5s ease;
   cursor: pointer;
   margin: 0.5rem 0 0.5rem 0;
 }
-.btn2{
+
+.btn2 {
   padding: 0.7rem;
   border-radius: 0.5rem;
-  background:  rgba(227, 226, 226, 0.901);
+  background: rgba(227, 226, 226, 0.901);
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: bold;
   transition: all 0.5s ease;
   cursor: pointer;
   margin: 0.6rem 0 0.5rem 0;
 }
-.btn:hover , .btn2:hover{
-  background-color:  rgb(112, 216, 248);
+
+.btn:hover,
+.btn2:hover {
+  background-color: rgb(112, 216, 248);
   transform: scale(1.05);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.432);
 }
 
-.toggleButton{
+.toggleButton {
   width: 3rem;
   height: 1.5rem;
   border-radius: 4rem;
   display: inline-block;
   border: 1px solid black;
 }
-.toggleButton .scroolToggle{
+
+.toggleButton .scroolToggle {
   width: 1.5rem;
   height: 1.5rem;
   background-color: rgb(0, 0, 0);
@@ -66,11 +70,11 @@ body{
   text-align: center;
 }
 
-#checkBox{
+#checkBox {
   display: none;
 }
 
-.toggleBox input:checked ~ .toggleLableBox .toggleButton .scroolToggle{
+.toggleBox input:checked~.toggleLableBox .toggleButton .scroolToggle {
   margin-left: 1.5rem;
 }
 
@@ -80,30 +84,30 @@ body{
   padding: 15px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-  transition: all 0.5s, box-shadow 0.3s;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 1s, box-shadow 0.8s;
   cursor: pointer;
   max-width: 300px;
   min-width: 200px;
+  position: relative;
 }
 
-.card:focus{
-  background:  rgba(0, 195, 255, 0.6) ;
+
+.card:nth-child(odd) {
+  background: linear-gradient(90deg, rgba(0, 195, 255, 0.397), rgba(208, 255, 0, 0.274));
 }
 
-.card:nth-child(odd){
-  background: linear-gradient(90deg , rgba(0, 195, 255, 0.397) , rgba(208, 255, 0, 0.274));
-}
-.card:nth-child(even){
-  background: linear-gradient(90deg , rgba(208, 255, 0, 0.274) , rgba(0, 195, 255, 0.397) );
+.card:nth-child(even) {
+  background: linear-gradient(90deg, rgba(208, 255, 0, 0.274), rgba(0, 195, 255, 0.397));
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  /* transform: scale(1.05); */
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.8);
 }
 
-.card h2 , .card p{
+.card h2,
+.card p {
   margin-top: 0;
 }
 
@@ -112,13 +116,14 @@ body{
   text-decoration: line-through;
   color: rgb(221, 3, 3) !important;
 }
+
 .completed {
   color: greenyellow;
   text-shadow: 0 0 10px black;
-  background: linear-gradient(90deg , rgb(0, 205, 144) , rgba(21, 255, 0, 0.580)) !important;
+  background: linear-gradient(90deg, rgb(0, 205, 144), rgba(21, 255, 0, 0.580)) !important;
 }
 
-.completedBtn{
+.completedBtn {
   min-width: 40%;
   border-radius: 5px;
   border: none;
@@ -129,9 +134,34 @@ body{
   transition-delay: 20s;
   box-shadow: 5px 2px 5px black;
 }
+
 .completedBtnDone {
   transform: scale(0);
-  background: linear-gradient(90deg , rgb(0, 255, 17) , rgba(21, 255, 0, 0.586)) !important;
+  background: linear-gradient(90deg, rgb(0, 255, 17), rgba(21, 255, 0, 0.586)) !important;
+}
+
+.btnBox {
+  display: flex;
+  justify-content: space-around;
+}
+
+.popup {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 90%;
+  border-radius: 10px;
+  padding: 10px;
+  left: 0;
+  transition: all 0.8s linear;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  box-shadow: 0 0 15px black;
+}
+
+.opacityOn {
+  height: 90%;
+  opacity: 1;
 }
 
 /* ------------سایدبار -------------- */
@@ -139,25 +169,30 @@ body{
 .sidebar {
   width: 230px;
   height: 100vh;
-  background:linear-gradient(90deg , rgba(255, 255, 255, 0.568) , rgba(255, 255, 255, 0.525)), url(/src/assets/images/42.jpg);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.568), rgba(255, 255, 255, 0.525)), url(/src/assets/images/42.jpg);
   background-size: cover;
   background-position: center;
   backdrop-filter: blur(20px) brightness(0.8);
   position: fixed;
   top: 0;
   left: 0;
-  transition: transform 1s ease; /* تنظیم انیمیشن */
-  transform: translateX(0); /* موقعیت پیش‌فرض در سمت چپ */
+  transition: transform 1s ease;
+  /* تنظیم انیمیشن */
+  transform: translateX(0);
+  /* موقعیت پیش‌فرض در سمت چپ */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.466);
 }
 
-.sidebar-right{
-  transform: translateX(calc(100vw - 230px)); /* انتقال کامل به سمت راست */
+.sidebar-right {
+  transform: translateX(calc(100vw - 230px));
+  /* انتقال کامل به سمت راست */
   direction: rtl;
 }
-.sidebar-left{
+
+.sidebar-left {
   direction: ltr;
-  transform: translateX(0); /* موقعیت سمت چپ */
+  transform: translateX(0);
+  /* موقعیت سمت چپ */
 }
 
 .rtl-mode {
@@ -168,10 +203,11 @@ body{
   direction: ltr;
 }
 
-.fade-move-left{
+.fade-move-left {
   animation: fade 1s linear;
 }
-.fade-move-right{
+
+.fade-move-right {
   animation: fade2 1s linear;
 }
 
@@ -209,12 +245,13 @@ body{
 /* مدیا کوئری برای سایزهای کوچک‌تر */
 @media (max-width: 768px) {
   .card {
-      flex: 1 1 100%;
+    flex: 1 1 100%;
   }
+
   .sidebar {
     display: none;
   }
-  
+
 }
 
 
@@ -223,24 +260,40 @@ body{
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
 }
 
 @keyframes fade {
-  0%{opacity: 0;}
-  30%{opacity: 0;}
-  100%{opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
+
 @keyframes fade2 {
-  0%{opacity: 0;}
-  30%{opacity: 0;}
-  100%{opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
-
-
-
