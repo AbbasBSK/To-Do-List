@@ -11,6 +11,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className, isRtl }) => {
             <ul className='menu'>
                 <li className='btn2'>Dashboard</li>
                 <li className='btn2'>Tasks</li>
+                
                 <li className='btn2'>Calendar</li>
             </ul>
         </div>
